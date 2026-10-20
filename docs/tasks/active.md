@@ -6,16 +6,16 @@ NTECH AI website Phase 0 foundation on `codex/ntech-ai-phase-0`.
 
 ## Goal
 
-Bootstrap the website described by `ntech-website/docs/NTECH-AI-Website-Implementation-Plan.md` as an
+Bootstrap the website described by `docs/NTECH-AI-Website-Implementation-Plan.md` as an
 isolated Next.js modular monolith with PostgreSQL/Prisma, admin authentication, RBAC,
 design tokens, development infrastructure, CI, safe Owner seeding, and local documentation.
 
 ## Outcome
 
-- Phase 0 implementation is complete in `ntech-website/`.
+- Phase 0 implementation is complete; the website is now a standalone repository (ADR-0009).
 - ADR-0008 records the intentional website subtree and pinned foundation choices.
 - The implementation checklist and its verification notes are in
-  `ntech-website/docs/tasks/phase-0.md`.
+  `docs/tasks/phase-0.md`.
 - Website gate is green: Prisma validation, ESLint, strict TypeScript, 7 unit tests, and
   Next.js production build.
 - Docker Compose configuration renders successfully. Live migration replay was not run
@@ -29,4 +29,4 @@ design tokens, development infrastructure, CI, safe Owner seeding, and local doc
 1. Start Docker Desktop and run the initial migration twice against the disposable dev DB.
 2. Review Phase 0 and merge the feature branch when approved.
 3. Obtain approved brand/company/catalog inputs before Phase 1 public content work.
-4. Continue the NVision M4 track independently from this website subtree.
+4. Create the GitHub repository and push `main`, then confirm the CI run.

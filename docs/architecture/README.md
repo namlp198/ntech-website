@@ -29,6 +29,6 @@ Rules:
 7. Demo content must carry an explicit `Dữ liệu demo` label and must not be presented as
    real company, product, price, inventory, certification, or partner data.
 
-ADR-0008 at the repository root records the website subtree and dependency decisions that
-differ from the standalone-repository assumption in the implementation plan.
+`docs/decisions/` records the dependency decisions (ADR-0008) and the move to a standalone
+repository (ADR-0009).
 

@@ -3,7 +3,7 @@
 ## Scope
 
 Bootstrap the `ntech-website/` website application described by
-`ntech-website/docs/NTECH-AI-Website-Implementation-Plan.md`, without deploying it or publishing
+`docs/NTECH-AI-Website-Implementation-Plan.md`, without deploying it or publishing
 unverified business data.
 
 ## Issues

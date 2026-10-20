@@ -1,8 +1,8 @@
 # ADR-0008 — Isolate the NTECH AI website in an application subtree
 
-- **Status:** Accepted
+- **Status:** Accepted; placement superseded by ADR-0009
 - **Date:** 2026-09-26
-- **Related:** ADR-0001, ADR-0002, ADR-0003, `ntech-website/docs/NTECH-AI-Website-Implementation-Plan.md`
+- **Related:** ADR-0001, ADR-0002, ADR-0003, `docs/NTECH-AI-Website-Implementation-Plan.md`
 
 ## Context
 
@@ -58,6 +58,6 @@ capability-oriented monorepo.
 ## Amendment — 2026-10-20
 
 The subtree was renamed from `ntech-ai/` to `ntech-website/`, and all website documentation
-(plan, ADRs, tasks, handoff) moved into `ntech-website/docs/` so that nothing about the
+(plan, ADRs, tasks, handoff) moved into `docs/` so that nothing about the
 website lives in the NVision `docs/`, `tasks/`, `handoff/` or `decisions/` folders. The CI
 `website` job stays in `.github/workflows/ci.yml` because GitHub only reads workflows there.

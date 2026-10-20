@@ -11,7 +11,7 @@ is required for Phase 0.
 
 ## First run
 
-From `ntech-website/`:
+From the repository root:
 
 ```powershell
 Copy-Item .env.example .env

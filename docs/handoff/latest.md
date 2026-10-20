@@ -11,16 +11,24 @@ domain change, or provider configuration was performed.
 
 ## Completed
 
-### 2026-10-20 — relocation into `ntech-website/`
+### 2026-10-20 — standalone repository
+
+- Split out of the NTech/NVision repository with `git subtree split`, keeping history.
+  ADR-0009 records the decision.
+- Added a root CI workflow, `.gitattributes`, `AGENTS.md` and `CLAUDE.md`.
+- Removed the Vitest cache path that pointed into the parent repository.
+- No GitHub remote yet; the owner creates it.
+
+### 2026-10-20 — relocation into `ntech-website/` (inside NTech, before the split)
 
 - Renamed `ntech-ai/` to `ntech-website/`; the CI `website` job now runs there.
 - Moved the plan, ADR-0008, the Phase 0 issue list, and the website task/handoff notes into
-  `ntech-website/docs/`. The root NVision `handoff/latest.md`, `tasks/active.md`,
+  `docs/`. The root NVision `handoff/latest.md`, `tasks/active.md`,
   `docs/00_CONTEXT.md` and `decisions/0000_INDEX.md` were restored to their NVision content.
 
 ### 2026-09-26 — Phase 0
 
-Implemented Phase 0 from `ntech-website/docs/NTECH-AI-Website-Implementation-Plan.md` in the isolated
+Implemented Phase 0 from `docs/NTECH-AI-Website-Implementation-Plan.md` in the isolated
 `ntech-website/` subtree. ADR-0008 records this placement because the current repository already
 hosts the active NVision platform.
 
