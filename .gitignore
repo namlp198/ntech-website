@@ -1,0 +1,8 @@
+.env
+.env.local
+.next/
+coverage/
+generated/prisma/
+node_modules/
+*.log
+

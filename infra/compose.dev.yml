@@ -1,0 +1,44 @@
+name: ntech-ai-dev
+
+services:
+  postgres:
+    image: postgres:18.1-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ntech_ai}
+      POSTGRES_USER: ${POSTGRES_USER:-ntech_ai}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - ntech_ai_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  app:
+    profiles: ["app"]
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+      target: development
+    env_file:
+      - ../.env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-ntech_ai}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-ntech_ai}?schema=public
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ..:/app
+      - ntech_ai_node_modules:/app/node_modules
+    command: pnpm dev --hostname 0.0.0.0
+
+volumes:
+  ntech_ai_postgres:
+  ntech_ai_node_modules:
+
